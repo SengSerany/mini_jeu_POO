@@ -8,13 +8,14 @@ require_relative 'lib/player'
 
 def combat_d_infirme
 
-player_1 = Player.new ("Serany")
+player_1 = Player.new ("Serany")	# on ajoute directement les joueurs pour ne pas à avoir a les definir en paramètre
 player_2 = Player.new ("Ugo")
 life_points = 10
+
 	puts "À ma droite #{player_1.name} : Valeureux guerrier de la Papouasie nouvelle guinée.
 À ma gauche #{player_2.name} : la binocle pour les intimes.
 "
-	sleep(3)
+	sleep(3) # Défini un temps en secondes avant l'affichage de la suite
 
 	puts "#{player_1.name} et #{player_2.name} ont chacun #{life_points} points de vie
 	Et ils vont se livrer à un combat sans merci"
@@ -70,7 +71,7 @@ puts "\n"
 
 sleep(2)
 
-	while player_1.life_points != 0 || player_2.life_points != 0
+	while player_1.life_points != 0 || player_2.life_points != 0 #Tant que l'un des joueurs n'a pas atteint 0 pv la boucle continue
 		player_1.attacks(player_2)
 		sleep(3)
 			break if player_2.life_points == 0
@@ -99,5 +100,3 @@ puts "
 end
 
 combat_d_infirme
-
-binding.pry
